@@ -86,7 +86,10 @@ export default class MessageContainer extends React.PureComponent {
   }
 
   scrollToBottom = () => {
-    this.scrollTo({ offset: 0, animated: 'true' });
+    if(this.props.inverted)
+      this.scrollTo({ offset: 0, animated: 'true' });
+    else 
+      this.flatListRef.scrollToEnd();
   };
 
   handleOnScroll = (event) => {
