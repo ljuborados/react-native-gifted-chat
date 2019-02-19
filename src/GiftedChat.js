@@ -110,18 +110,6 @@ class GiftedChat extends React.Component {
     this.setTextFromProp(text);
   }
 
-  componentDidMount() {
-    setTimeout(()=> {
-      console.log('calling scrollToTop');
-      this._messageContainerRef.scrollToTop();
-    }, 200);
-
-    setTimeout(()=> {
-      console.log('calling scrollToBottom');
-      this._messageContainerRef.scrollToBottom();
-    }, 3000);
-  }
-
   componentWillUnmount() {
     this.setIsMounted(false);
   }
@@ -636,7 +624,7 @@ GiftedChat.propTypes = {
   extraData: PropTypes.object,
   minComposerHeight: PropTypes.number,
   maxComposerHeight: PropTypes.number,
-  alignTop: PropTypes.bool
+  alignTop: PropTypes.bool,
 };
 
 export {
