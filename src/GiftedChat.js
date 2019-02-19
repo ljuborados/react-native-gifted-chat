@@ -118,6 +118,8 @@ class GiftedChat extends React.Component {
     const { messages, text } = nextProps;
     this.setMessages(messages || []);
     this.setTextFromProp(text);
+
+    if (this.props.messages !== messages) this.scrollToBottom();
   }
 
   initLocale() {
@@ -341,7 +343,6 @@ class GiftedChat extends React.Component {
     }
 
     this.props.onSend(messages);
-    this.scrollToBottom();
 
     if (shouldResetInputToolbar === true) {
       setTimeout(() => {
