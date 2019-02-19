@@ -52,6 +52,7 @@ class GiftedChat extends React.Component {
     this._isFirstLayout = true;
     this._locale = 'en';
     this._messages = [];
+    this._messageContainerRef = null;
 
     this.state = {
       isInitialized: false, // initialization will calculate maxHeight before rendering the chat
