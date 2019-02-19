@@ -110,6 +110,12 @@ class GiftedChat extends React.Component {
     this.setTextFromProp(text);
   }
 
+  componentDidMount() {
+    setTimeout(()=> {
+      this._messageContainerRef.scrollToTop();
+    })
+  }
+
   componentWillUnmount() {
     this.setIsMounted(false);
   }
