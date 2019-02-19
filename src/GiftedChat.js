@@ -112,8 +112,14 @@ class GiftedChat extends React.Component {
 
   componentDidMount() {
     setTimeout(()=> {
+      console.log('calling scrollToTop');
       this._messageContainerRef.scrollToTop();
-    })
+    }, 200);
+
+    setTimeout(()=> {
+      console.log('calling scrollToBottom');
+      this._messageContainerRef.scrollToBottom();
+    }, 3000);
   }
 
   componentWillUnmount() {
