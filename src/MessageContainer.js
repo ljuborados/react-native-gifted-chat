@@ -93,6 +93,8 @@ export default class MessageContainer extends React.PureComponent {
   };
 
   handleOnScroll = (event) => {
+    if(this.props.onScrollCallback) this.props.onScrollCallback(event);
+    
     if (event.nativeEvent.contentOffset.y > this.props.scrollToBottomOffset) {
       this.setState({ showScrollBottom: true });
     } else {
