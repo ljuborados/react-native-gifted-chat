@@ -120,7 +120,8 @@ class GiftedChat extends React.Component {
     this.setMessages(messages || []);
     this.setTextFromProp(text);
 
-    if (this.props.messages !== messages) this.scrollToBottom();
+    if (this.props.messages !== messages) 
+      setTimeout(this.scrollToBottom);
   }
 
   initLocale() {
