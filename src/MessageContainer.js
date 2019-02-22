@@ -93,16 +93,14 @@ export default class MessageContainer extends React.PureComponent {
   };
 
   handleOnScroll = (event) => {
+    if(this.props.onScrollCallback) this.props.onScrollCallback(event);
+
     if (event.nativeEvent.contentOffset.y > this.props.scrollToBottomOffset) {
       this.setState({ showScrollBottom: true });
     } else {
       this.setState({ showScrollBottom: false });
     }
   };
-
-  handleOnScrollEnd = (event) => {
-    if (this.props.onScrollCallback) this.props.onScrollCallback(event);
-  }
 
   renderRow = ({ item, index }) => {
     if (!item._id && item._id !== 0) {
@@ -178,7 +176,6 @@ export default class MessageContainer extends React.PureComponent {
           ListFooterComponent={this.renderHeaderWrapper}
           ListHeaderComponent={this.renderFooter}
           onScroll={this.handleOnScroll}
-          onScrollEndDrag={this.handleOnScrollEnd}
           scrollEventThrottle={10}
           {...this.props.listViewProps}
         />
