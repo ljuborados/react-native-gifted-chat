@@ -628,7 +628,8 @@ GiftedChat.propTypes = {
   minComposerHeight: PropTypes.number,
   maxComposerHeight: PropTypes.number,
   alignTop: PropTypes.bool,
-  onScrollCallback: PropTypes.func
+  onScrollCallback: PropTypes.func,
+  onScrollEndCallback: PropTypes.func,
 };
 
 export {
