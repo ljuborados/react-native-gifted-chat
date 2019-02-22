@@ -181,7 +181,7 @@ export default class MessageContainer extends React.PureComponent {
           ListHeaderComponent={this.renderFooter}
           onScroll={this.handleOnScroll}
           onScrollEndDrag={this.handleOnScrollEnd}
-          scrollEventThrottle={10}
+          scrollEventThrottle={80}
           {...this.props.listViewProps}
         />
       </View>
