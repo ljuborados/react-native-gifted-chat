@@ -630,6 +630,7 @@ GiftedChat.propTypes = {
   alignTop: PropTypes.bool,
   onScrollCallback: PropTypes.func,
   onScrollEndCallback: PropTypes.func,
+  onMomentumScrollEndCallback: PropTypes.func,
 };
 
 export {

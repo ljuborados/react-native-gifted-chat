@@ -106,6 +106,10 @@ export default class MessageContainer extends React.PureComponent {
     if (this.props.onScrollEndCallback) this.props.onScrollEndCallback(event);
   }
 
+  handleMomentumScrollEnd = (event) => {
+    if (this.props.onMomentumScrollEndCallback) this.props.onMomentumScrollEndCallback(event);
+  }
+
   renderRow = ({ item, index }) => {
     if (!item._id && item._id !== 0) {
       console.warn('GiftedChat: `_id` is missing for message', JSON.stringify(item));
@@ -181,6 +185,7 @@ export default class MessageContainer extends React.PureComponent {
           ListHeaderComponent={this.renderFooter}
           onScroll={this.handleOnScroll}
           onScrollEndDrag={this.handleOnScrollEnd}
+          onMomentumScrollEnd={this.handleMomentumScrollEnd}
           scrollEventThrottle={80}
           {...this.props.listViewProps}
         />
